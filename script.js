@@ -85,17 +85,17 @@ function updateWeatherDisplay(tempC, precipitation, humidity, windSpeed, weather
     document.getElementById('windSpeed').innerHTML = `${(windSpeed * 3.6).toFixed(1)} km/h`;
 
     const circleWeather = document.querySelector('.circleWeather');
+    
     if (tempC < 20) {
-        document.body.style.backgroundColor = '#34ace0';
+        document.body.style.backgroundColor = (isMobile() ? 'white' : '#34ace0');
         circleWeather.style.backgroundImage = "url('https://cdn.pixabay.com/animation/2023/02/15/02/31/02-31-39-143_512.gif')";
-        circleWeather.style.backgroundSize = 'cover'; 
-        circleWeather.style.backgroundPosition = 'center';
     } else {
-        document.body.style.backgroundColor = '';
+        document.body.style.backgroundColor = (isMobile() ? 'white' : '');
         circleWeather.style.backgroundImage = "url('https://www.mundoconectado.com.br/wp-content/uploads/2021/11/this-stunning-4k-timelapse-of-the-is-sun-made-from-78846-nasa-photos-1.jpg')";
-        circleWeather.style.backgroundSize = 'cover'; 
-        circleWeather.style.backgroundPosition = 'center';
     }
+
+    circleWeather.style.backgroundSize = 'cover'; 
+    circleWeather.style.backgroundPosition = 'center';
 
     hidePreloader();
 }
@@ -107,6 +107,10 @@ function hidePreloader() {
         preloader.style.display = "none";
         document.getElementById("content").style.display = "block";
     }, 1000);
+}
+
+function isMobile() {
+    return /Mobi|Android/i.test(navigator.userAgent);
 }
 
 celsiusButton.addEventListener('click', () => {
