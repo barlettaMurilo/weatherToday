@@ -5,15 +5,9 @@ let currentTempC = null;
 let currentCity = '';
 
 window.onload = function() {
-    setTimeout(function() {
-        const preloader = document.getElementById("preloader");
-        preloader.style.opacity = "0"; // Inicia a transição de opacidade
-
-        setTimeout(function() {
-            preloader.style.display = "none"; // Oculta o pré-loader após a transição
-            document.getElementById("content").style.display = "block"; // Mostra o conteúdo
-        }, 1000); // Espera 1000 milissegundos para coincidir com a duração da transição
-    }, 2000); // Espera 2000 milissegundos (2 segundos)
+    const preloader = document.getElementById("preloader");
+    preloader.style.opacity = "1";
+    getUserLocation();
 };
 
 function selectButton(buttonToSelect, buttonToDeselect) {
@@ -29,6 +23,7 @@ function getUserLocation() {
         navigator.geolocation.getCurrentPosition(success, error, { timeout: 10000 });
     } else {
         console.log("Geolocalização não é suportada por este navegador.");
+        hidePreloader();
     }
 }
 
@@ -39,6 +34,7 @@ function success(position) {
 
 function error(err) {
     console.error(`Erro ao obter a localização: ${err.message}`);
+    hidePreloader();
 }
 
 async function getCityFromCoordinates(lat, lon) {
@@ -95,14 +91,23 @@ function updateWeatherDisplay(tempC, precipitation, humidity, windSpeed, weather
         circleWeather.style.backgroundSize = 'cover'; 
         circleWeather.style.backgroundPosition = 'center';
     } else {
-        document.body.style.backgroundColor = ''; // possível problema
+        document.body.style.backgroundColor = '';
         circleWeather.style.backgroundImage = "url('https://www.mundoconectado.com.br/wp-content/uploads/2021/11/this-stunning-4k-timelapse-of-the-is-sun-made-from-78846-nasa-photos-1.jpg')";
         circleWeather.style.backgroundSize = 'cover'; 
         circleWeather.style.backgroundPosition = 'center';
     }
+
+    hidePreloader();
 }
 
-getUserLocation();
+function hidePreloader() {
+    const preloader = document.getElementById("preloader");
+    preloader.style.opacity = "0";
+    setTimeout(() => {
+        preloader.style.display = "none";
+        document.getElementById("content").style.display = "block";
+    }, 1000);
+}
 
 celsiusButton.addEventListener('click', () => {
     selectButton(celsiusButton, fahrenheitButton);
