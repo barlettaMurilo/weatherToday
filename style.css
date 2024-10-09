@@ -1,0 +1,176 @@
+* {
+    padding: 0;
+    margin:0;
+}
+
+body {
+    background-color:#FF5924;
+    font-family:'Poppins', sans-serif;
+}
+
+main {
+    background-color:white;
+    width:20rem;
+    margin:0 auto;
+    height:35rem;
+    border-radius:2rem;
+    box-shadow: 0 0 0 0.5rem rgba(0,0,0,0.05);
+    margin-top:4rem;
+}
+
+.content {
+    width:85%;
+    height:85%;
+    margin:0 auto;
+    position:Relative;
+    top:7.5%;
+}
+
+.topWeather {
+    display: flex;
+    width:100%;
+}
+
+.logo {
+    float:left;
+    width:50%;
+    font-weight:bold;
+    color:#430F02;
+    font-size:1.3rem;
+    line-height: 0.8;
+}
+
+.celsiusOrFireheight {
+    display:flex;
+    justify-content: right;
+    align-items: center;
+    width:50%;
+}
+
+.boxButtons {
+    background-color:#EFECE5;
+    height:100%;
+    padding:0.2rem 0.3rem;
+    box-sizing: border-box; 
+    border-radius:5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:0.2rem;
+}
+
+.boxButtons button {
+    width:2rem;
+    background-color:transparent;
+    text-align:center;
+    border-radius:5rem;
+    border:None;
+    height:90%;
+    color:#917A48;
+    font-weight:bold;
+    font-size:1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor:pointer;
+}
+
+.boxButtons button.selected {
+    background-color:white;
+}
+
+.contentCircleWeather {
+    height:16rem;
+    display:flex;
+    margin-top:2rem;
+}
+
+.circleWeather {
+    margin:0 auto;
+    background-color:#FFC224;
+    width:100%;
+    height:100%;
+    border-radius:50%;
+}
+
+.weatherDate {
+    margin-top:2rem;
+    height:4rem;
+}
+
+.numberWeather {
+    font-size:4rem;
+    font-weight:500px;
+    color:#430F02;
+    width:50%;
+    float:left;
+    line-height: 0.8;
+}
+
+.dateWeather {
+    text-align:right;
+    color:#A8956F;
+    font-size:0.8rem;
+    font-weight:500;
+    text-transform: capitalize;
+}
+
+.grid-container {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+    width: 100s%; 
+    height: 4rem;
+    gap: 0;
+    background-color:#FBFAF8;
+    border-radius:0.8rem;
+    margin-top:1rem;
+}
+
+.grid-item {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size:0.8rem;
+    display: flex; /* Usar Flexbox */
+    flex-direction: column; /* Alinhar conteúdo em uma coluna (vertical) */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center;
+    border-right:1px solid rgba(0,0,0,0.05);
+}
+
+.grid-item .grid-title {
+    color:#A6946D;
+    font-size:0.6rem;
+    font-weight:Bold;
+    margin-bottom:0.2rem;
+}
+
+.grid-item div {
+    font-size:1rem;
+    color:#65453F;
+    font-weight:bold;
+}
+
+@media (max-width: 768px) { /* Este tamanho depende da sua definição de mobile */
+    body {
+        background-color:white;
+    }
+    main {
+        width:100%;
+        height:100vh;
+      margin-top:0;
+      border-radius:0%;
+    }
+    .logo {
+        font-size:2.2rem;
+    }
+    .circleWeather {
+        width:350px;
+        height:350px;
+    }
+    .contentCircleWeather {
+        height:350px;
+        display:flex;
+    }
+    .boxButtons button {
+        width:3.5rem;
+    }
+  }
