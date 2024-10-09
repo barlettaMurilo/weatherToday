@@ -35,7 +35,7 @@ main {
     float:left;
     width:50%;
     font-weight:bold;
-    color:#430F02;
+    color:#383838;
     font-size:1.3rem;
     line-height: 0.8;
 }
@@ -48,7 +48,7 @@ main {
 }
 
 .boxButtons {
-    background-color:#EFECE5;
+    background-color:#efefef;
     height:100%;
     padding:0.2rem 0.3rem;
     box-sizing: border-box; 
@@ -66,7 +66,7 @@ main {
     border-radius:5rem;
     border:None;
     height:90%;
-    color:#917A48;
+    color:#8f8f8f;
     font-weight:bold;
     font-size:1rem;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -99,7 +99,7 @@ main {
 .numberWeather {
     font-size:4rem;
     font-weight:500px;
-    color:#430F02;
+    color:#393939;
     width:50%;
     float:left;
     line-height: 0.8;
@@ -107,7 +107,7 @@ main {
 
 .dateWeather {
     text-align:right;
-    color:#A8956F;
+    color:#a3a3a3;
     font-size:0.8rem;
     font-weight:500;
     text-transform: capitalize;
@@ -119,7 +119,7 @@ main {
     width: 100s%; 
     height: 4rem;
     gap: 0;
-    background-color:#FBFAF8;
+    background-color:rgba(0,0,0,0.03);
     border-radius:0.8rem;
     margin-top:1rem;
 }
@@ -137,7 +137,7 @@ main {
 }
 
 .grid-item .grid-title {
-    color:#A6946D;
+    color:#a3a3a3;
     font-size:0.6rem;
     font-weight:Bold;
     margin-bottom:0.2rem;
@@ -145,7 +145,7 @@ main {
 
 .grid-item div {
     font-size:1rem;
-    color:#65453F;
+    color:#666666;
     font-weight:bold;
 }
 
