@@ -4,6 +4,18 @@ const fahrenheitButton = document.getElementById('fahrenheitButton');
 let currentTempC = null;
 let currentCity = '';
 
+window.onload = function() {
+    setTimeout(function() {
+        const preloader = document.getElementById("preloader");
+        preloader.style.opacity = "0"; // Inicia a transição de opacidade
+
+        setTimeout(function() {
+            preloader.style.display = "none"; // Oculta o pré-loader após a transição
+            document.getElementById("content").style.display = "block"; // Mostra o conteúdo
+        }, 1000); // Espera 1000 milissegundos para coincidir com a duração da transição
+    }, 2000); // Espera 2000 milissegundos (2 segundos)
+};
+
 function selectButton(buttonToSelect, buttonToDeselect) {
     buttonToSelect.classList.add('selected');
     buttonToDeselect.classList.remove('selected');
